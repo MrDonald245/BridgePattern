@@ -1,0 +1,40 @@
+﻿<Window x:Class="BridgePattern.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BridgePattern"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <RadioButton Checked="RadioButton_OnChecked" IsChecked="True" GroupName="Figures" x:Name="radioButtonCircle" Content="Circle" HorizontalAlignment="Left" />
+                <RadioButton Checked="RadioButton_OnChecked" GroupName="Figures" x:Name="radioButtonRectangle" Content="Rectangle" HorizontalAlignment="Left" />
+                <RadioButton IsEnabled="False" Checked="RadioButton_OnChecked" GroupName="Figures" x:Name="radioButtonTriangle" Content="Triangle" HorizontalAlignment="Left" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1">
+                <RadioButton Checked="RadioButtonWindowsImpl_OnChecked" IsChecked="True" GroupName="Impl" x:Name="radioButtonWindowsImpl" Content="Windows implementetion" HorizontalAlignment="Left" />
+                <RadioButton Checked="RadioButtonWindowsImpl_OnChecked" GroupName="Impl" x:Name="radioButtonWpfImpl" Content="WPF implementetion" HorizontalAlignment="Left" />
+            </StackPanel>
+        </Grid>
+        
+        
+
+        <Canvas Name="Canvas" MouseDown="UIElement_OnMouseDown" Grid.Row="1" Background="#f7f9f9">
+            
+        </Canvas>
+
+    </Grid>
+</Window>
